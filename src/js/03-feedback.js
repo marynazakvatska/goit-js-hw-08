@@ -1,4 +1,4 @@
-import throttle from 'lodash.throttle'
+import throttle from 'lodash.throttle'; 
 
 
 /* Відстежуй на формі подію input, і щоразу записуй у локальне сховище об'єкт з полями email і message, 
@@ -17,10 +17,10 @@ const textarea = document.querySelector('textarea')
 /* console.log(form)
 console.log(textarea) */
 
-console.log(3543)
+console.log("vgbhjnk")
   
 
-/* 
+
 form.addEventListener('submit', onSubmitForm);
 
   function onSubmitForm(e)  {
@@ -35,37 +35,51 @@ form.addEventListener('submit', onSubmitForm);
 const objectForSave = JSON.parse(JSON.stringify({ email, message }))
     console.log(objectForSave)
     
-      e.currentTarget.reset();
-     removeItemStor()
+   /*    e.currentTarget.reset();
+     removeItemStor() */
   
   }
 
 
 function removeItemStor() {
   localStorage.removeItem(STORAGE_KEY)
-} */
+}
 
+
+
+/* 
 
 const formData = {};
-/*  console.log(formData) */
+
+updateForm()
+
 
 form.addEventListener('submit', e => {
  console.log(e.target.name);
  console.log(e.target.value);
 
   formData[e.target.name] = e.target.value;
- /* console.log(formData); */
+
 localStorage.setItem(STORAGE_KEY, JSON.stringify(formData))
  
   
   const objectForSave = JSON.parse(JSON.stringify(formData))
     console.log(objectForSave)
 
-/*  e.currentTarget.reset();
-     removeItemStor()  */
+ e.currentTarget.reset();
+     removeItemStor() 
  });
 
 
 function removeItemStor() {
   localStorage.removeItem(STORAGE_KEY)
 } 
+
+function updateForm() {
+
+  const message = localStorage.getItem(STORAGE_KEY)
+  if (message) {
+   formData = message
+ }
+
+}  */
