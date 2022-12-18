@@ -9,7 +9,6 @@ console.log(videoEl)
 
 const player = new Player(videoEl);
 
-/* player.setCurrentTime(Object.values(JSON.parse(localStorage.getItem(STORAGE_KEY)))[0]) */  
  player.setCurrentTime(Object.values(JSON.parse(localStorage.getItem(STORAGE_KEY)))[0])
 
 console.log(localStorage.getItem(STORAGE_KEY))
@@ -18,10 +17,10 @@ console.log(Object.keys(JSON.parse(localStorage.getItem(STORAGE_KEY))))
 console.log(Object.values(JSON.parse(localStorage.getItem(STORAGE_KEY)))[0])
 
 
-player.on('timeupdate', function(currentTime) {
+player.on('timeupdate', throttle(function(currentTime) {
     console.log(currentTime)
     localStorage.setItem(STORAGE_KEY,  JSON.stringify(currentTime) )
-} );
+}, 1000) );
 
 
 
