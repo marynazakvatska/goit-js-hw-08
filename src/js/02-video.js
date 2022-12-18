@@ -9,10 +9,7 @@ console.log(videoEl)
 
 const player = new Player(videoEl);
 
-player.setCurrentTime(Object.values(JSON.parse(localStorage.getItem(STORAGE_KEY)))[0])
-/* const object = JSON.parse(localStorage.getItem(STORAGE_KEY))
-console.log(object.seconds )
-player.setCurrentTime(object.seconds) */
+player.setCurrentTime(Object.values(JSON.parse(localStorage.getItem(STORAGE_KEY)))[0] || 0)
 
 
 player.on('timeupdate', throttle(function(currentTime) {
@@ -22,6 +19,13 @@ player.on('timeupdate', throttle(function(currentTime) {
 
 
 
+/* 
+player.on('timeupdate', throttle(function(data) {
+    localStorage.setItem(STORAGE_KEY,  data.seconds )
+}, 1000) );
+
+player.setCurrentTime(localStorage.getItem(STORAGE_KEY) || 0)
+ */
 
 /* Вивчи документацію методу on() і почни відстежувати подію timeupdate - оновлення часу відтворення.
 Зберігай час відтворення у локальне сховище. Нехай ключем для сховища буде рядок "videoplayer-current-time".
