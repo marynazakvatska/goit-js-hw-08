@@ -20,19 +20,19 @@ const textarea = document.querySelector('textarea')
 
 
 form.addEventListener('submit', onSubmitForm);
-input.addEventListener("input", onChange);
-textarea.addEventListener("input", onChange)
+input.addEventListener("input", throttle(onChange, 500));
+textarea.addEventListener("input", throttle(onChange, 500))
+/* form.addEventListener('input', throttle(onChange,500)) */
 
 
-/* throttle(update(), 500)  */
 update()
 
 
   function onSubmitForm(e)  {
     e.preventDefault()
-    console.log(formData)
-    formData = {}
-
+     console.log(formData);
+   
+/*     formData = {} */
       e.currentTarget.reset();
 localStorage.removeItem(STORAGE_KEY)
   
@@ -40,7 +40,7 @@ localStorage.removeItem(STORAGE_KEY)
 
 
 function onChange(e) {
-
+  console.log(formData[e.target.name])
   formData[e.target.name] = e.target.value;
   localStorage.setItem(STORAGE_KEY, JSON.stringify(formData))
 }
