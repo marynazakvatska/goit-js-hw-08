@@ -24,8 +24,8 @@ input.addEventListener("input", onChange);
 textarea.addEventListener("input", onChange)
 
 
-throttle(update(), 500);
-/* update() */
+/* throttle(update(), 500)  */
+update()
 
 
   function onSubmitForm(e)  {
