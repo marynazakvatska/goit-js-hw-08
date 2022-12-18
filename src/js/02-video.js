@@ -9,12 +9,13 @@ console.log(videoEl)
 
 const player = new Player(videoEl);
 
-player.setCurrentTime(Object.values(JSON.parse(localStorage.getItem(STORAGE_KEY)))[0] || 0)
+/* player.setCurrentTime(Object.values(JSON.parse(localStorage.getItem(STORAGE_KEY)))[0] || 0) */
+
+player.setCurrentTime(JSON.parse(localStorage.getItem(STORAGE_KEY)) || 0)
 
 
 player.on('timeupdate', throttle(function(currentTime) {
-    console.log(currentTime)
-    localStorage.setItem(STORAGE_KEY,  JSON.stringify(currentTime) )
+    localStorage.setItem(STORAGE_KEY,  JSON.stringify(currentTime.seconds) )
 }, 1000) );
 
 
