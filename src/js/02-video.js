@@ -9,11 +9,11 @@ console.log(videoEl)
 
 const player = new Player(videoEl);
 
-/* player.setCurrentTime(Object.values(JSON.parse(localStorage.getItem(STORAGE_KEY)))[0]) */
-const object = JSON.parse(localStorage.getItem(STORAGE_KEY))
-console.log(object)
+player.setCurrentTime(Object.values(JSON.parse(localStorage.getItem(STORAGE_KEY)))[0])
+/* const object = JSON.parse(localStorage.getItem(STORAGE_KEY))
+console.log(object.seconds )
 player.setCurrentTime(object.seconds)
-
+ */
 
 /* console.log(localStorage.getItem(STORAGE_KEY))
 console.log(JSON.parse(localStorage.getItem(STORAGE_KEY)))
