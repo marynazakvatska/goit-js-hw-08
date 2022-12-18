@@ -22,7 +22,7 @@ const textarea = document.querySelector('textarea')
 form.addEventListener('submit', onSubmitForm);
 input.addEventListener("input", throttle(onChange, 500));
 textarea.addEventListener("input", throttle(onChange, 500))
-/* form.addEventListener('input', throttle(onChange,500)) */
+
 
 
 update()
